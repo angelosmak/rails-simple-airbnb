@@ -20,8 +20,8 @@
           </div>
           <div class="card-body bg-white">
             <a href="/flats/<%= flat.id %>" class="card-link text-primary">More Info</a>
-            <a href="/flats/<%= flat.id %>" class="card-link text-warning">Edit</a>
-            <a href="/flats/<%= flat.id %>" class="card-link text-danger">Remove</a>
+            <a href="/flats/<%= flat.id %>/edit" class="card-link text-warning">Edit</a>
+    <%= link_to "Remove", flat_path(flat), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "card-link text-danger" %>
           </div>
         </div>
       </div>
