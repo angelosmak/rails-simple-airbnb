@@ -7,7 +7,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Flat.destroy_all
 10.times do
   flat = Flat.create!(
     name: ['Light & Spacious Garden Flat London', 'Sunny Villa in Corfu', 'Gothic appartment with view in Nuremberg',

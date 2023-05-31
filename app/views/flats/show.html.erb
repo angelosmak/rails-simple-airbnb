@@ -1,43 +1,39 @@
 <img class="absolute" src="https://images.unsplash.com/photo-1529408632839-a54952c491e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" class="rounded mx-auto d-block" alt="image" width="100%" height="500rem">
-<div class="container relative row ">
-  <div class=" col-8 text-center mb-3 pt-3 bg-light shadow p-3  bg-body-tertiary rounded">
-    <h2><%= @flat.name %></h2>
-    <p><%= @flat.address %></p>
-  </div>
-  <div class=" col-8 text-center shadow p-3 mb-5 bg-body-tertiary rounded">
-    <div class="descr image pt-3 bg-light">
-      <h3>A bit more about this flat...</h3>
-      <p><%= @flat.description %></p>
-      <div>
-        <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2231&q=80" alt="map" width="100%">
+<div class="container relative">
+  <div class="row">
+    <div class="col-8">
+      <div class="flat-show-card shadow-lg p-3 mb-3 bg-body-tertiary rounded">
+        <h2><%= @flat.name %></h2>
+        <p><%= @flat.address %></p>
+      </div>
+      <div class="flat-show-card shadow-lg p-3 mb-3 bg-body-tertiary rounded">
+        <h3>A bit more about this flat...</h3>
+        <p><%= @flat.description %></p>
+        <div class="map">
+          <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2231&q=80" alt="map" width="100%">
+        </div>
+      </div>
+    </div>
+    <div id="sticky" class="col-4 py-3 ">
+      <form class="card shadow-lg p-3 mb-3 bg-body-tertiary rounded" action="/book" method="POST">
+        <div class="card mb-3">
+          <label class="form-label"for="from-date">From:</label>
+          <input class="form-control"type="date" id="from-date" name="from-date" required>
+        </div>
+        <div class="card mb-3">
+          <label class="form-label" for="to-date">To:</label>
+          <input class="form-control" type="date" id="to-date" name="to-date" required>
+        </div>
+      <button class="btn btn-primary" type="submit">Book now!</button>
+    </form>
+    <div class="flat-show-card shadow-lg p-3 mb-3 bg-body-tertiary rounded">
+      <div class="flex">
+        <h4>Share</h4>
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-twitter"></i></a>
+        <a href=""><i class="fa-brands fa-square-pinterest"></i></a>
       </div>
     </div>
     </div>
-    <div id= "form"class="card col-4 shadow p-1 mb-5 bg-body-tertiary rounded" heigh="10vh">
-      <form action="/book" method="POST">
-    <div class="mb-3">
-        <label class="form-label"for="from-date">From:</label>
-        <input class="form-control"type="date" id="from-date" name="from-date" required>
-    </div>
-    <div class="mb-3">
-        <label class="form-label" for="to-date">To:</label>
-        <input class="form-control" type="date" id="to-date" name="to-date" required>
-    </div>
-
-        <button class="btn btn-primary" type="submit">Book now!</button>
-      </form>
-      <hr>
-    <div class=" deets">
-      <h3>Details</h3>
-      <p><%= @flat.number_of_guests %> People <%= @flat.price_per_night %>$</p>
-    </div>
-    <hr>
-    <div class="d-flex justify-content-between" style="max-height: 1rem;">
-      <h4>Share</h4>
-      <a href=""><i class="fa-brands fa-facebook"></i></a>
-      <a href=""><i class="fa-brands fa-twitter"></i></a>
-      <a href=""><i class="fa-brands fa-square-pinterest"></i></a>
-    </div>
   </div>
-    </div>
 </div>

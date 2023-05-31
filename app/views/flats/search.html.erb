@@ -1,0 +1,32 @@
+<div class="container text-center mt-3">
+  <h1>Search Results</h1>
+  <div class="row row-cols-3 mt-4 ">
+    <% if @flats.present? %>
+      <% @flats.each do |flat| %>
+        <div class="flat-card col "  style="width: 27rem; height: 40rem;">
+          <div class="card bg-light rounded" >
+            <img src="https://images.unsplash.com/photo-1529408632839-a54952c491e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" class="rounded mx-auto d-block" alt="image" width="100%" height="30%">
+          </div>
+          <div class="card-body bg-light shadow p-1 mb-5 bg-body-tertiary rounded">
+            <h2 class="card-title fs-5"><%=link_to "#{flat.name}",flat_path(flat.id)%></h2>
+            <h5 class="card-text fw-light"><%= flat.address %></h5>
+          <div>
+            <hr>
+            <ul class=" list-group list-group-horizontal ">
+              <li class="list-group-item shadow p-1 mb-2 me-2 bg-body-tertiary rounded"><i class="fa-solid fa-dollar-sign"></i><%= flat.price_per_night %></li>
+              <li class="list-group-item shadow p-1 mb-2 bg-body-tertiary rounded"><i class="fa-solid fa-person"></i><%= flat.number_of_guests %></li>
+            </ul>
+          </div>
+          <div class="card-body bg-white ">
+            <a href="/flats/<%= flat.id %>" class="card-link text-primary">More Info</a>
+            <a href="/flats/<%= flat.id %>/edit" class="card-link text-warning">Edit</a>
+            <%= link_to "Remove", flat_path(flat), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "card-link text-danger" %>
+          </div>
+        </div>
+      </div>
+    <%end %>
+  <% else %>
+    <p>No results found.</p>
+  <% end %>
+  </div>
+</div>

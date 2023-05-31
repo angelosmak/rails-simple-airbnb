@@ -20,9 +20,7 @@ class FlatsController < ApplicationController
     redirect_to flats_path
   end
 
-  def edit
-
-  end
+  def edit; end
 
   def update
     @flat.update(flat_params)
@@ -32,6 +30,11 @@ class FlatsController < ApplicationController
   def destroy
     @flat.destroy
     redirect_to flats_path
+  end
+
+  def search
+    @search_query = params[:search_query]
+    @flats = Flat.where('name LIKE ?', "%#{@search_query}%")
   end
 
   private
