@@ -13,6 +13,26 @@
   </head>
 
   <body>
+  <div class="d-flex bg-light ">
+  <div class="me-auto p-2">
+    <a class="text-decoration-none mt-5 fs-4" href="/flats">Simple Airbnb</a>
+  </div>
+  <div class="p-2">
+    <form class="row g-3">
+      <div class="col-auto">
+        <label for="inputPassword2" class="visually-hidden">Search</label>
+        <input type="text" class="form-control" id="inputPassword2" placeholder="Search">
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-outline-success py-1">Search</button>
+      </div>
+    </form>
+  </div>
+    <div>
+      <a href="/new" class="p-2 btn btn-outline-primary mt-2 py-1">Add Flat</a>
+    </div>
+  </div>
+</div>
     <%= yield %>
   </body>
 </html>
